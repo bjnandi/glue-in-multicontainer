@@ -3,7 +3,7 @@ version: '3.3'
 # Container for Web Handler
 
 services:
-  ${CNTR_FRONT}:
+  $CNTR_FRONT:
     env_file:
       - .env
     build: 
