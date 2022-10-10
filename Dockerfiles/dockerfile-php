@@ -9,8 +9,6 @@ ENV DB_HOST=$CNTR_DB
 ENV TZ=Asia/Dhaka \
     DEBIAN_FRONTEND=noninteractive
 
-COPY ./Entrypoint/* /
-
 
 WORKDIR /public_html
 
