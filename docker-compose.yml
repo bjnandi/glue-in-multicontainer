@@ -48,8 +48,8 @@ services:
         - APP_DB_PASS=${APP_DB_PASS}
         - DB_DUMP_FILE=${DB_DUMP_FILE}
         - CNTR_DB=${CNTR_DB}
-    image: glue-Backend
-    container_name: glue-Backend
+    image: glue-backend
+    container_name: glue-backend
     restart: unless-stopped
     working_dir: /public_html
     volumes:
