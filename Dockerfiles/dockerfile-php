@@ -12,6 +12,7 @@ RUN apt update && apt install lsb-release ca-certificates apt-transport-https so
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer; \
     sed -i "s,listen = /run.*,listen = 9000,g" /etc/php/8.1/fpm/pool.d/www.conf; \
     sed -i "s,error_log =.*,;error_log =,g" /etc/php/8.1/fpm/php-fpm.conf; \
-    wget -O /startup.sh https://raw.githubusercontent.com/Team-Cloudboost/glue-in-multicontainer/main/Entrypoint/startup.sh;
+    wget -O /startup.sh https://raw.githubusercontent.com/Team-Cloudboost/glue-in-multicontainer/main/Entrypoint/startup.sh; \
+    rm -rf /var/lib/apt/lists/*;
 
 RUN ["chmod", "+x", "/startup.sh"] 
