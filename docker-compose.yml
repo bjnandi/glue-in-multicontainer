@@ -48,16 +48,16 @@ services:
         - APP_DB_PASS=${APP_DB_PASS}
         - DB_DUMP_FILE=${DB_DUMP_FILE}
         - CNTR_DB=${CNTR_DB}
-      image: glue-Backend
-      container_name: glue-Backend
-      restart: unless-stopped
-      working_dir: /public_html
-      volumes:
-        - glue-app:/public_html
-      expose:
-        - 9000
-      networks:
-        - glue
+    image: glue-Backend
+    container_name: glue-Backend
+    restart: unless-stopped
+    working_dir: /public_html
+    volumes:
+      - glue-app:/public_html
+    expose:
+      - 9000
+    networks:
+      - glue
     entrypoint: ["sh", "/startup.sh"]
 
 # Database Tier start Here
