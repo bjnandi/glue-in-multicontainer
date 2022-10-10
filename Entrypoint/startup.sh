@@ -6,7 +6,7 @@ if ! [ -f /run/cloudboost ]; then
         composer install;
         php artisan key:generate;
         touch /run/cloudboost;
-		mysql -h$GLUE_DB_HOST -u$DB_USER -p$DB_PASS $GLUE_DB < /public_html/$DB_DUMP;
+		mysql -h$GLUE_D_HOST -u$GLUE_DATABASE_USER -p$GLUE_DATABASE_PASS $GLUE_DATABASE < /public_html/$DB_DUMP;
 else
         echo "project already initialized";
 fi
