@@ -10,7 +10,7 @@ ARG CNTR_DB
 ARG APP_DB_USER
 ARG APP_DB_PASS
 
-COPY ./config/nginx/* /etc/nginx/conf.d/default.conf
+COPY ./config/nginx/* /etc/nginx/conf.d/*
 
 RUN apk add git; \
     mkdir /public_html; \
