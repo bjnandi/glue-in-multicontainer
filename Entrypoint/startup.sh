@@ -6,7 +6,7 @@ if ! [ -f /run/cloudboost ]; then
         composer install;
         php artisan key:generate;
         touch /run/cloudboost;
-		mysql -h$DB_HOST -u$DB_USER -p$DB_PASS $APP_DB < /public_html/$DB_DUMP;
+		mysql -h$APP_DB_HOST -u$DB_USER -p$DB_PASS $APP_DB < /public_html/$DB_DUMP;
 else
         echo "project already initialized";
 fi
