@@ -6,7 +6,9 @@ if ! [ -f /run/cloudboost ]; then
         composer install;
         php artisan key:generate;
         touch /run/cloudboost;
-		mysql -h$GLUE_D_HOST -u$GLUE_DATABASE_USER -p$GLUE_DATABASE_PASS $GLUE_DATABASE < /public_html/$DB_DUMP;
+		mysql -h$CNTR_DB -u$APP_DB_USER -p$APP_DB_PASS $APP_DB < /public_html/$DB_DUMP_FILE;
+        chown -R www-data:www-data /public_html/REPO_PROJECT_FOLDER/storage; 
+        chown -R www-data:www-data /public_html/REPO_PROJECT_FOLDER/bootstrap/cache;
 else
         echo "project already initialized";
 fi
