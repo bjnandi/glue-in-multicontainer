@@ -20,7 +20,7 @@ services:
         - APP_DB_USER=${APP_DB_USER}
         - APP_DB_PASS=${APP_DB_PASS}
     image: glue-frontend
-    contaner_name: glue-frontend
+    container_name: glue-frontend
     restart: unless-stopped
     working_dir: /public_html
     volumes:
