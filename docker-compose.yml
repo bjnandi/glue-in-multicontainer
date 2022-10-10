@@ -27,7 +27,7 @@ services:
       - glue-app:/public_html
     ports:
       - 80:80
-    network:
+    networks:
       - glue
 
 
