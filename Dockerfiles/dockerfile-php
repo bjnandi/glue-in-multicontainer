@@ -5,7 +5,7 @@ ENV TZ=Asia/Dhaka \
     DEBIAN_FRONTEND=noninteractive
 
 
-COPY ../Entrypoint/startup.sh /startup.sh
+COPY ./Entrypoint/startup.sh /startup.sh
 
 WORKDIR /public_html
 

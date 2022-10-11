@@ -11,7 +11,7 @@ ARG APP_DB
 ARG APP_DB_USER
 ARG APP_DB_PASS
 
-COPY ../config/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY ./config/nginx/default.conf /etc/nginx/conf.d/default.conf
 
 WORKDIR /public_html
 
