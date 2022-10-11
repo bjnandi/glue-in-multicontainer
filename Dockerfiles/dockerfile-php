@@ -5,6 +5,8 @@ ENV TZ=Asia/Dhaka \
     DEBIAN_FRONTEND=noninteractive
 
 
+COPY ../Entrypoint/startup.sh /startup.sh
+
 WORKDIR /public_html
 
 RUN apt update && apt install \
@@ -22,7 +24,7 @@ RUN apt update && apt install \
     sed -i "s,listen = /run.*,listen = 9000,g" /etc/php/8.1/fpm/pool.d/www.conf; \
     sed -i "s,error_log =.*,;error_log =,g" /etc/php/8.1/fpm/php-fpm.conf; \
     #Setting UP Entrypoint
-    wget -O /startup.sh https://raw.githubusercontent.com/Team-Cloudboost/glue-in-multicontainer/main/Entrypoint/startup.sh; \
+    #wget -O /startup.sh https://raw.githubusercontent.com/Team-Cloudboost/glue-in-multicontainer/main/Entrypoint/startup.sh; \
     rm -rf /var/lib/apt/lists/*;
 
 RUN ["chmod", "+x", "/startup.sh"] 
