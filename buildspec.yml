@@ -18,7 +18,6 @@ phases:
      - sudo curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
      - chmod +x /usr/local/bin/docker-compose
      - docker-compose --version
-     - systemctl start docker
  pre_build:
    commands:
     # - echo Logging in to Amazon EKS...
@@ -35,7 +34,7 @@ phases:
   commands:
     - echo Build started on `date`
     - echo Building the Docker image...
-    - docker-compose up -d
+    - docker-compose build
     - dokcer images
     # - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG 
 
