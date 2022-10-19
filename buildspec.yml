@@ -33,7 +33,7 @@ phases:
   commands:
     - echo Build started on `date`
     - echo Building the Docker image...
-    - sudo docker-compose up -d
+    - docker-compose up -d
     - dokcer images
     # - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG 
 
